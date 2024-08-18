@@ -88,7 +88,7 @@
 
 <script>
     let board = ['', '', '', '', '', '', '', '', ''];
-    let currentPlayer = 'Player1';
+    let currentPlayer = 'X';
     let isGameOver = false;
     const winningCombos = [
         [0, 1, 2],
@@ -106,7 +106,7 @@
             board[cellIndex] = currentPlayer;
             document.getElementById('cell' + cellIndex).innerText = currentPlayer;
             checkWinner();
-            currentPlayer = currentPlayer === 'Player1' ? 'O' : 'Player1';
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         }
     }
 
