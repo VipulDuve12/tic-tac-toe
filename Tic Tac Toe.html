@@ -88,10 +88,8 @@
 
 <script>
     let board = ['', '', '', '', '', '', '', '', ''];
-    let currentPlayer = 'X';
+    let currentPlayer = 'Player1';
     let isGameOver = false;
-
-    // Winning combinations
     const winningCombos = [
         [0, 1, 2],
         [3, 4, 5],
@@ -108,7 +106,7 @@
             board[cellIndex] = currentPlayer;
             document.getElementById('cell' + cellIndex).innerText = currentPlayer;
             checkWinner();
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            currentPlayer = currentPlayer === 'Player1' ? 'O' : 'Player1';
         }
     }
 
@@ -121,8 +119,6 @@
                 return;
             }
         }
-
-        // Check for draw
         if (!board.includes('')) {
             isGameOver = true;
             document.getElementById('winnerMessage').innerText = 'It\'s a Draw!';
